@@ -1,7 +1,7 @@
 There is a index file here for demo
 follow the below steps with the guidance of conductors
 
-1)ONLY EDIT THE INDEX FILE (DO NOT TOUCH THE TRIVIA CHECK file)
+1) ONLY EDIT THE INDEX FILE (DO NOT TOUCH THE TRIVIA CHECK file)
 2) the main index file has many blanks and placeholders,
 3) your task is to make a branch
 4) edit the information(ie correct the errors and edit the placeholders)
