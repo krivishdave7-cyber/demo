@@ -1,0 +1,41 @@
+name: Trivia Completion Checker
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  check-trivia:
+    name: Check trivia page
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Open repository files
+        uses: actions/checkout@v6
+
+      - name: Check that index.md exists
+        run: |
+          if [ ! -f "index.md" ]; then
+            echo "::error::index.md is missing."
+            exit 1
+          fi
+
+      - name: Check for unfinished placeholders
+        run: |
+          if grep -q "\[ADD" index.md; then
+            echo "::error::Your trivia still contains unfinished placeholders."
+            echo "Replace every section beginning with [ADD."
+            exit 1
+          fi
+
+      - name: Check that an answer key exists
+        run: |
+          if ! grep -q "## Answer Key" index.md; then
+            echo "::error::The Answer Key section is missing."
+            exit 1
+          fi
+
+      - name: Show success message
+        run: |
+          echo "All checks passed!"
+          echo "Your trivia page is complete."
