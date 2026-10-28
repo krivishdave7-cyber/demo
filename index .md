@@ -8,7 +8,7 @@ Welcom to my awsome trivia challange!
 
 ## Instrutions
 
-Chose one anwser for every question.
+Choose one anwser for every question.
 Do not look at the anwser key untill you finish.
 
 ## Question 1
